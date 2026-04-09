@@ -1,12 +1,14 @@
 <script setup lang="ts">
+    import { ref } from 'vue';
+    import type { Ref } from 'vue';
     import ListItem from './ListItem.vue';
 
-    type ListItem = {
+    type Item = {
         title: string,
         checked?: boolean
     }
 
-    const listItems: ListItem[] = [
+    const listItems: Ref<Item[]> = ref([
         { title: 'Make a todo list app', checked: true },
         { title: 'Predict the weather', checked: false },
         { title: 'Play some tunes', checked: false },
@@ -16,7 +18,22 @@
         { title: 'Organize a game night', checked: false },
         { title: 'Learn a new language', checked: false },
         { title: 'Publish my work' }
-    ]
+    ])
+
+    const toggleItemChecked = (item: Item): void => {
+        item.checked = !item.checked
+    }
+
+    const findItemInList = (item: Item): Item | undefined => {
+        return listItems.value.find((itemInList) => itemInList.title === item.title)
+    }
+
+    const updateItem = (item: Item): void => {
+        const updatedItem = findItemInList(item);
+        if(updatedItem) {
+            toggleItemChecked(updatedItem)
+        }
+    }
 </script>
 
 <template>
