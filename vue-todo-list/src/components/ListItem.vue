@@ -19,4 +19,7 @@ label {
 .checked {
     text-decoration: line-through;
 }
+label {
+    display: block;
+}
 </style>
