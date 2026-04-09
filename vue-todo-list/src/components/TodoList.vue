@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang='ts'>
     import { ref } from 'vue';
     import type { Ref } from 'vue';
     import ListItem from './ListItem.vue';
@@ -39,7 +39,7 @@
 <template>
     <ul>
         <li :key='key' v-for='(item, key) in listItems'>
-            <ListItem :is-checked="item.checked">{{ item.title }}</ListItem>
+            <ListItem :is-checked='item.checked' v-on:click.prevent='updateItem(item)'>{{ item.title }}</ListItem>
         </li>
     </ul>
 </template>
