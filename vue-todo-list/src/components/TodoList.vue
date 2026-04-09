@@ -1,17 +1,37 @@
 <script setup lang="ts">
     import ListItem from './ListItem.vue';
+
+    type ListItem = {
+        title: string,
+        checked?: boolean
+    }
+
+    const listItems: ListItem[] = [
+        { title: 'Make a todo list app', checked: true },
+        { title: 'Predict the weather', checked: false },
+        { title: 'Play some tunes', checked: false },
+        { title: 'Let\'s get cooking', checked: false },
+        { title: 'Pump some iron', checked: false },
+        { title: 'Track my expenses', checked: false },
+        { title: 'Organize a game night', checked: false },
+        { title: 'Learn a new language', checked: false },
+        { title: 'Publish my work' }
+    ]
 </script>
 
 <template>
     <ul>
-        <ListItem :is-checked="false">This is the slotted content</ListItem>
-        <ListItem :is-checked="true">This is the JLoka slotted content</ListItem>
-        <ListItem :is-checked="false">This is the slotted content</ListItem>
+        <li :key='key' v-for='(item, key) in listItems'>
+            <ListItem :is-checked="item.checked">{{ item.title }}</ListItem>
+        </li>
     </ul>
 </template>
 
 <style scoped>
     ul {
-        padding: 0;
+        list-style-type: none;
+    }
+    li {
+        margin: 0.4rem 0;
     }
 </style>
