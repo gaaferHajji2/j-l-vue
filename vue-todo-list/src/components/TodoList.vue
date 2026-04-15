@@ -8,7 +8,17 @@
         checked?: boolean
     }
 
-    const storageItems: Ref<Item[]> = ref([])
+    const getFromStorage = (): Item[] => {
+        const stored = localStorage.getItem('list-items')
+        if(stored) {
+            return JSON.parse(stored)
+        } else {
+            initListItems()
+        } 
+        return []
+    }
+
+    const storageItems: Ref<Item[]> = ref(getFromStorage())
 
     const initListItems = (): void => {
         if(storageItems.value?.length == 0) {
@@ -48,14 +58,6 @@
 
     const setToStorage = (items: Item[]): void => {
         localStorage.setItem('list-items', JSON.stringify(items))
-    }
-
-    const getFromStorage = (): Item[] => {
-        const stored = localStorage.getItem('list-items')
-        if(stored) {
-            return JSON.parse(stored)
-        }
-        return []
     }
 
     const sortedList = computed(() => [...storageItems.value].sort((a, b) => (a.checked ? 1 : 0) - (b.checked ? 1 : 0)))
