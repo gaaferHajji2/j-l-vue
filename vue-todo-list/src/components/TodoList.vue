@@ -1,14 +1,14 @@
 <script setup lang='ts'>
-    import { ref, onMounted, computed } from 'vue';
-    import type { Ref } from 'vue';
-    import ListItem from './ListItem.vue';
+    import { ref, onMounted, computed } from 'vue'
+    import type { Ref } from 'vue'
+    import ListItem from './ListItem.vue'
 
     type Item = {
         title: string,
         checked?: boolean
     }
 
-    const storageItems: Ref<Item[]> = ref([]);
+    const storageItems: Ref<Item[]> = ref([])
 
     const initListItems = (): void => {
         if(storageItems.value?.length == 0) {
@@ -24,8 +24,8 @@
                 { title: 'Publish my work' }
             ]
 
-            setToStorage(listItems);
-            storageItems.value = listItems;
+            setToStorage(listItems)
+            storageItems.value = listItems
             console.log('Init the items')
         }
     }
@@ -39,9 +39,10 @@
     }
 
     const updateItem = (item: Item): void => {
-        const updatedItem = findItemInList(item);
+        const updatedItem = findItemInList(item)
         if(updatedItem) {
             toggleItemChecked(updatedItem)
+            setToStorage(storageItems.value)
         }
     }
 
@@ -54,7 +55,7 @@
         if(stored) {
             return JSON.parse(stored)
         }
-        return [];
+        return []
     }
 
     const sortedList = computed(() => [...storageItems.value].sort((a, b) => (a.checked ? 1 : 0) - (b.checked ? 1 : 0)))
@@ -76,9 +77,9 @@
 
 <style scoped>
     ul {
-        list-style-type: none;
+        list-style-type: none
     }
     li {
-        margin: 0.4rem 0;
+        margin: 0.4rem 0
     }
 </style>
