@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import type { Ref } from 'vue'
 
 type Geolocation = {
@@ -11,10 +11,24 @@ const coords: Ref<Geolocation|undefined> = ref()
 const geolocationBlockedByUser: Ref<boolean> = ref(false)
 const getGeolocation = async (): Promise<void> => {
     await navigator.geolocation.getCurrentPosition(
-        () => {}, 
+        async (position: { coords: Geolocation }) => {
+            coords.value = position.coords
+        }, 
         (error: {message: string}) => {
             geolocationBlockedByUser.value = true;
             alert(`The error message is: ${error.message}`)
         });
 }
+
+onMounted(async () =>{
+    await getGeolocation()
+})
 </script>
+
+<template>
+    <div v-if="coords && !geolocationBlockedByUser">
+        Latitude: {{ coords.latitude}} & Longitude: {{ coords.longitude }}
+    </div>
+
+    <div v-if="geolocationBlockedByUser">User denied access</div>
+</template>
