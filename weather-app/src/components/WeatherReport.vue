@@ -48,3 +48,12 @@ onMounted(async () => {
   data.value = weatherResponse
 })
 </script>
+
+<template>
+  <div>
+    <article v-if="data && data.current">
+      {{ data.current }}
+    </article>
+    <div v-else>Loading...</div>
+  </div>
+</template>
