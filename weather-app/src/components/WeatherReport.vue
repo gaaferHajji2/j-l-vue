@@ -42,6 +42,14 @@ const fetchWeather = async (coords: Coords): Promise<WeatherData> => {
   return data
 }
 
+const formatDate = (dateString: Date): string => {
+  const date = new Date(dateString)
+  return new Intl.DateTimeFormat("defaule",{
+    "dateStyle": "long",
+    "timeStyle": "short",
+  }).format(date)
+}
+
 onMounted(async () => {
   const { latitude, longitude } = props.coords
   const weatherResponse = await fetchWeather({latitude, longitude})
@@ -63,8 +71,9 @@ onMounted(async () => {
         </h1>
 
         <p>{{ data.location.name }} {{ data.location.region }}</p>
-        
+
         <p>Precipitation: {{ data.current.precip_mm }}mm</p>
+        <p>{{ formatDate(data.location.localtime) }}</p>
       </div>
     </article>
     <div v-else>Loading...</div>
