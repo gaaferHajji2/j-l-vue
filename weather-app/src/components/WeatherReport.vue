@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import type { Ref } from 'vue'
 
 type WeatherData = {
@@ -29,4 +29,22 @@ interface Props {
 
 const props = defineProps<Props>()
 const data: Ref<WeatherData | undefined> = ref()
+
+const fetchWeather = async (coords: Coords): Promise<WeatherData> => {
+  const { latitude, longitude } = coords;
+  const q = `${latitude},${longitude}`
+  const res = await fetch(
+    `https://api.weatherapi.com/v1/current.json?key=${
+      import.meta.env.VITE_APP_WEATHER_API_KEY
+    }&q=${q}`)
+
+  const data = await res && res.json()
+  return data
+}
+
+onMounted(async () => {
+  const { latitude, longitude } = props.coords
+  const weatherResponse = await fetchWeather({latitude, longitude})
+  data.value = weatherResponse
+})
 </script>
