@@ -8,10 +8,11 @@ interface Props {
 const props = defineProps<Props>()
 
 const windStyle = computed(() => ({ "transform": "rotate("+props.degrees+"deg)"}))
-
-
 </script>
 
 <template>
-
+    <span class="inline-block" :style="windStyle" aria-hidden="true">
+        ⬇️ <span class="sr-only">Wind Direction {{ degrees }} degress</span>
+    </span>
+    
 </template>
