@@ -12,6 +12,7 @@ const windStyle = computed(() => ({ "transform": "rotate("+props.degrees+"deg)"}
 
 <template>
     <span class="inline-block" :style="windStyle" aria-hidden="true">
+        <!-- sr for screen readers -->
         ⬇️ <span class="sr-only">Wind Direction {{ degrees }} degress</span>
     </span>
     
