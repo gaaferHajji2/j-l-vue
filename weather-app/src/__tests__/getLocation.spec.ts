@@ -33,4 +33,19 @@ describe("GetLocation", () => {
             longitude: -0.1278,
         })
     })
+
+    it("should display error message", async (): Promise<void> => {
+        const mockGeoLocation = vi.fn((successCallback: Function, errorCallback: Function) => {
+            const error = new Error("User denied access to geolocation")
+            errorCallback(error)
+        })
+
+        global.navigator.geolocation = {
+            getCurrentPosition: mockGeoLocation,
+        }
+
+        const warpper = await shallowMount<GetLocation>(GetLocation)
+        expect(warpper.vm.geolocationBlockedByUser).toEqual(true)
+        expect(warpper.html()).toContain("User denied access")
+    })
 })
