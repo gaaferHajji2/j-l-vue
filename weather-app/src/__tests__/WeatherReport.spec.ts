@@ -78,6 +78,6 @@ describe("Weather Report Tests", () => {
         expect(wrapper.text()).toContain(mockData.location.name)
         expect(wrapper.text()).toContain(mockData.location.region)
         expect(wrapper.text()).toContain(mockData.current.wind_kph)
-        // expect(wrapper.text()).toContain(mockData.current.wind_degree)
+        expect(wrapper.text()).toContain(mockData.current.wind_degree)
     })
 })
