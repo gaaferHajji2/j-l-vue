@@ -1,4 +1,4 @@
-import WeatherReport from "@/components/WeatherReport.vue"
+import WeatherReport, { formatDate } from "@/components/WeatherReport.vue"
 import { flushPromises, mount, shallowMount } from "@vue/test-utils"
 import { vi } from "vitest"
 
@@ -30,7 +30,6 @@ describe("Weather Report Tests", () => {
         })
         expect(wrapper.html()).toContain("Loading...")
     })
-
     it("should return data", async () => {
         const mockData = {
             location: {
@@ -79,5 +78,31 @@ describe("Weather Report Tests", () => {
         expect(wrapper.text()).toContain(mockData.location.region)
         expect(wrapper.text()).toContain(mockData.current.wind_kph)
         expect(wrapper.text()).toContain(mockData.current.wind_degree)
+    })
+    it("displays the right format for date", async () => {
+        const date = new Date()
+
+        const mockData = {
+            location: {
+                localtime: date,
+            },
+            current: {
+                condition: {},
+            }
+        }
+        global.fetch = vi.fn(() => Promise.resolve({
+            json: () => Promise.resolve(mockData)
+        })) as any
+        const wrapper = mount(WeatherReport, {
+            props: {
+                coords: {
+                    latitude: 0,
+                    longitude: 0
+                }
+            }
+        })
+        await flushPromises();
+        const localtime = wrapper.find("[data-testid=localtime]");
+        expect(localtime.text()).toEqual(formatDate(date))
     })
 })
