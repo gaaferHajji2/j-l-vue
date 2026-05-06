@@ -19,10 +19,11 @@ const creatorsList = computed(() =>
 </script>
 <template>
     <CardView>
-        <template v-slot:header>
+        <!-- <template v-slot:header> -->
+        <template #header>
             {{ comic.title }}
         </template>
-        <template v-slot:default>
+        <template #default>
             <img class="aspect-150/228 shadow-xl float-left mr-4"
                 :src="`${comic.thumbnail.path}.${comic.thumbnail.extension}`" width="150" />
             <dl>
