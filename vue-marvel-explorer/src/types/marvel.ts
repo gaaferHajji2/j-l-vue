@@ -1,7 +1,10 @@
 export enum Path {
+    CHARACTERS = "characters",
+    COMICS = "comics",
     CREATORS = "creators",
+    EVENTS = "events",
     SERIES = "series",
-    ISSUES = "issues",
+    STORIES = "stories",
 }
 
 export type PagedResults = {
