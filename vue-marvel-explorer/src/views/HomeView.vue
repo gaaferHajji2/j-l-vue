@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import ComicsOverview from '@/components/ComicsOverview.vue';
+
 </script>
 
 <template>
   <main>
-    <h1>This is a home page</h1>
+    <ComicsOverview />
   </main>
 </template>

@@ -5,7 +5,7 @@ export const dummyComics: Comic[] = [
         id: 1,
         title: "The Cosmic Vanguard #1",
         description: "A ragtag team of interstellar outcasts must unite to stop a rogue AI from consuming the Andromeda sector.",
-        thumbnail: { path: "https://dummy.api/comics/cosmic_vanguard_1", extension: "jpg" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 2,
             collectionURI: "https://dummy.api/creators",
@@ -46,7 +46,7 @@ export const dummyComics: Comic[] = [
         id: 2,
         title: "Shadow Protocol #3",
         description: "Detective Vance uncovers a conspiracy that ties the city's elite to a string of impossible disappearances.",
-        thumbnail: { path: "https://dummy.api/comics/shadow_protocol_3", extension: "png" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 3,
             collectionURI: "https://dummy.api/creators",
@@ -85,7 +85,7 @@ export const dummyComics: Comic[] = [
         id: 3,
         title: "The Amber Throne #5",
         description: "When the ancient crown falls into the hands of a reluctant farmhand, the fate of three kingdoms hangs in the balance.",
-        thumbnail: { path: "https://dummy.api/comics/amber_throne_5", extension: "webp" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "webp" },
         creators: {
             available: 2,
             collectionURI: "https://dummy.api/creators",
@@ -127,7 +127,7 @@ export const dummyComics: Comic[] = [
         id: 4,
         title: "Neon Nights: Cybernetic Dreams #12",
         description: "In a rain-slicked megacity, a hacker discovers a digital backdoor that could rewrite human consciousness.",
-        thumbnail: { path: "https://dummy.api/comics/neon_nights_12", extension: "jpg" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 3,
             collectionURI: "https://dummy.api/creators",
@@ -165,7 +165,7 @@ export const dummyComics: Comic[] = [
         id: 5,
         title: "Titan's Fall #1",
         description: "The world's greatest hero loses his powers and must survive a city that wants him dead.",
-        thumbnail: { path: "https://dummy.api/comics/titans_fall_1", extension: "png" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 2,
             collectionURI: "https://dummy.api/creators",
@@ -203,7 +203,7 @@ export const dummyComics: Comic[] = [
         id: 6,
         title: "The Last Botanist #7",
         description: "In a world choked by synthetic flora, a rogue scientist races to preserve the last natural seed vault.",
-        thumbnail: { path: "https://dummy.api/comics/last_botanist_7", extension: "jpg" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 3,
             collectionURI: "https://dummy.api/creators",
@@ -242,7 +242,7 @@ export const dummyComics: Comic[] = [
         id: 7,
         title: "Crimson Tide #15",
         description: "A naval blockade turns into a supernatural nightmare when ancient sea creatures rise from the abyss.",
-        thumbnail: { path: "https://dummy.api/comics/crimson_tide_15", extension: "webp" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "webp" },
         creators: {
             available: 2,
             collectionURI: "https://dummy.api/creators",
@@ -281,7 +281,7 @@ export const dummyComics: Comic[] = [
         id: 8,
         title: "Quantum Drift #2",
         description: "Time fractures across Manhattan. Only one physicist can stitch the timeline back together before reality unravels.",
-        thumbnail: { path: "https://dummy.api/comics/quantum_drift_2", extension: "jpg" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 3,
             collectionURI: "https://dummy.api/creators",
@@ -323,7 +323,7 @@ export const dummyComics: Comic[] = [
         id: 9,
         title: "Echoes of Olympus #9",
         description: "Ancient gods walk among mortals in modern Athens, but their petty rivalries threaten to ignite a divine war.",
-        thumbnail: { path: "https://dummy.api/comics/echoes_olympus_9", extension: "png" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 2,
             collectionURI: "https://dummy.api/creators",
@@ -363,7 +363,7 @@ export const dummyComics: Comic[] = [
         id: 10,
         title: "Steel City Chronicles #20",
         description: "A gritty urban fantasy where street gangs wield enchanted weapons and corporate sorcerers control the skyline.",
-        thumbnail: { path: "https://dummy.api/comics/steel_city_20", extension: "jpg" },
+        thumbnail: { path: "https://picsum.photos/200/300", extension: "jpg" },
         creators: {
             available: 4,
             collectionURI: "https://dummy.api/creators",
