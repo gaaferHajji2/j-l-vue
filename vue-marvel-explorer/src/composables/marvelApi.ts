@@ -44,7 +44,7 @@ export const useFetch = async (requestURI: string, data: boolean): Promise<Comic
   // const jsonRes = await res.json();
   // return jsonRes.data as Comics | Characters;
   const comics = {
-    count: 5,
+    count: 10,
     limit: 10,
     offset: 0,
     total: 10,
@@ -53,7 +53,7 @@ export const useFetch = async (requestURI: string, data: boolean): Promise<Comic
 
   const characters = {
     count: 10,
-    limit: 5,
+    limit: 10,
     offset: 0,
     total: 10,
     results: dummyCharacters
