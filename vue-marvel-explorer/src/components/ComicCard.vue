@@ -24,7 +24,7 @@ const creatorsList = computed(() =>
             {{ comic.title }}
         </template>
         <template #default>
-            <img class="aspect-150/228 shadow-xl float-left mr-4"
+            <img class="aspect-150/228 shadow-xl float-left mr-4 object-cover"
                 :src="`${comic.thumbnail.path}.${comic.thumbnail.extension}`" width="150" />
             <dl>
                 <dt>Series:</dt>
