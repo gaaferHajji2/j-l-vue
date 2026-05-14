@@ -58,6 +58,13 @@ export const useFetch = async (requestURI: string, data: boolean): Promise<Comic
     total: 10,
     results: dummyCharacters
   }
+
+  await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve([])
+        }, 1500)
+      })
+
   if(data) {
     return comics
   }
