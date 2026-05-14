@@ -5,7 +5,6 @@ import { useRoute, useRouter } from "vue-router";
 
 import { useComics } from "@/composables/marvelApi";
 import type { Comic } from "@/types/marvel";
-
 import LoadingIndicator from "./LoadingIndicator.vue";
 import ComicCard from "./ComicCard.vue";
 import Pagination from "./Pagination.vue";
