@@ -1,18 +1,13 @@
 <template>
-  <v-app>
-    <v-main>
-      <HelloWorld />
-      <v-btn
-        class="m-2"
-        icon="mdi-theme-light-dark"
-        location="top right"
-        position="absolute"
-        @click="$vuetify.theme.cycle()"
-      />
-    </v-main>
-  </v-app>
+  <v-layout>
+    <v-container class="main">
+      <main>
+        <router-view />
+      </main>
+    </v-container>
+    <v-footer app><span class="text-light-green">My Meal Planner</span>&nbsp;- &copy; {{ new Date().getFullYear() }}</v-footer>
+  </v-layout>
 </template>
 
 <script lang="ts" setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
 </script>
