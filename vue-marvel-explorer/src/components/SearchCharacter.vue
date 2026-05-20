@@ -78,8 +78,7 @@ const search = (query: string) => {
     >
       <div class="mb-4">
         <p>
-          🦹 Nothing found for "<em class="font-bold">{{ searchQuery }}</em
-          >". Please try again! 🦸‍♂️
+          🦹 Nothing found for "<em class="font-bold">{{ searchQuery }}</em>". Please try again! 🦸‍♂️
         </p>
       </div>
     </div>
