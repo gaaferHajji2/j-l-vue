@@ -1,20 +1,10 @@
 <script setup>
 
 import { ref } from 'vue';
-
 import ModalComponent from './components/ModalComponent.vue';
 
 const showModal = ref(false);
-
 const notes = ref([]);
-
-// console.log('The Show Modal is: ', showModal);
-
-// function onClick() {
-//   console.log(showModal);
-
-//   showModal.value = true;
-// }
 
 function close() {
   gsap.fromTo('.modal',
@@ -28,7 +18,6 @@ function close() {
 }
 
 function addNote(note) {
-
   notes.value.push({
     text: note,
     date: new Date().toLocaleDateString('en'),
@@ -47,20 +36,15 @@ function addNote(note) {
   );
 
 }
-
 </script>
 
 <template>
   <main>
-
     <ModalComponent :close-function='close' v-if='showModal' :add-note='addNote' />
     <!-- <ModalComponent :close-function='close' v-show='showModal' /> -->
-
-
     <div class='container'>
       <header>
         <h1>Notes</h1>
-
         <button @click='showModal = true'>+</button>
       </header>
 
@@ -69,14 +53,10 @@ function addNote(note) {
           <p class='card-main-text'>
             {{ note.text }}
           </p>
-
           <p class='card-date'>{{ note.date }}</p>
         </div>
       </div>
     </div>
-
-
-
   </main>
 </template>
 
@@ -84,15 +64,12 @@ function addNote(note) {
 main {
   height: 100vh;
   width: 100vw;
-
   position: relative;
 }
 
 .container {
   max-width: 1000px;
-
   padding: 25px;
-
   margin: 0 auto;
 }
 
@@ -100,7 +77,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   margin-bottom: 45px;
 }
 
@@ -130,21 +106,14 @@ header button:hover {
 .card {
   width: 200px;
   height: 200px;
-
   display: flex;
   flex-direction: column;
-
   justify-content: space-between;
-
   align-items: flex-start;
-
   padding: 15px;
-
   border-radius: 24px;
   background-color: darkgrey;
-
   margin: 0 15px 15px 0;
-
   overflow: auto;
   overflow-x: hidden;
 }
@@ -155,34 +124,7 @@ header button:hover {
 
 .card-main-text {
   color: #363333;
-
   font-size: 20px;
-
   font-weight: 500;
 }
 </style>
-
-<script>
-
-
-window.addEventListener('load', function (event) {
-
-  // console.log('The Show Modal is: ', showModal);
-
-  // const modal = document.querySelector('.card');
-
-  // if(modal) {
-  //   gsap.fromTo(modal, 
-  //     { y: 30, opacity: 0 }, 
-  //     { y:0, opacity: 1, duration: 1.5, stagger: 0.075 }
-  //   );
-  // } else {
-  //   console.log('Card Not Found');
-  // }
-
-  // gsap.fromTo('.card', { y: 30, opacity: 0 }, { y:0, opacity: 1, duration: 1.5, stagger: 0.075 });
-
-  // gsap.fromTo('.card-main-text', { opacity: 0 }, { opacity: 1 }, '<25%');
-
-});
-</script>
