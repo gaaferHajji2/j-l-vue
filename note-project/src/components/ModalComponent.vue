@@ -1,9 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const props = defineProps({
     closeFunction: Function,
-
     addNote: Function,
 });
 
@@ -18,6 +17,13 @@ const addNote2 = (note) => {
     errMsg.value = '';
   }
 }
+
+onMounted(() => {
+  gsap.fromTo('.modal', 
+        { opacity: 0, y: 30, rotate: '90deg' }, 
+        { opacity: 1, y: 0, duration: .5, rotate: '0deg' }
+    );
+})
 </script>
 
 <template>
@@ -34,20 +40,6 @@ const addNote2 = (note) => {
       </div>
     </div>
 </template>
-
-<script>
-
-export default {
-  name: "MainTemplate",
-  mounted() {
-    gsap.fromTo('.modal', 
-        { opacity: 0, y: 30, rotate: '90deg' }, 
-        { opacity: 1, y: 0, duration: .5, rotate: '0deg' });
-  },
-};
-
-
-</script>
 
 <style scoped>
 .overlay {
