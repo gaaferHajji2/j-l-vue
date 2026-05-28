@@ -62,8 +62,8 @@ function addNote(noteText) {
     // Wait for DOM update then animate the first card
     setTimeout(() => {
       gsap.fromTo('.card:first-child', 
-        { opacity: 0, y: -20, scale: 0.9 }, 
-        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(1.7)" }
+        { opacity: 0, y: -20, scale: 0.75 }, 
+        { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
       );
     }, 50);
   }
@@ -71,9 +71,6 @@ function addNote(noteText) {
 
 function deleteNote(id) {
   if (typeof gsap !== 'undefined') {
-    // Find the element to animate out
-    // Note: In a real app, you might want to target by specific ref or class logic
-    // For simplicity, we'll just remove it here, but ideally animate the specific card
     const index = notes.value.findIndex(n => n.id === id);
     if (index > -1) {
        // Simple removal for now, could be enhanced with GSAP exit animation
