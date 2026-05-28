@@ -1,5 +1,4 @@
 <script setup>
-
 import { ref } from 'vue';
 import ModalComponent from './components/ModalComponent.vue';
 
@@ -47,7 +46,6 @@ function addNote(note) {
         <h1>Notes</h1>
         <button @click='showModal = true'>+</button>
       </header>
-
       <div class='cards-container'>
         <div v-for='note in notes' :style='{ backgroundColor: note.backgroundColor }' :key='note.id' class='card'>
           <p class='card-main-text'>
