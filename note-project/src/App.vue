@@ -73,8 +73,9 @@ function deleteNote(id) {
   if (typeof gsap !== 'undefined') {
     const index = notes.value.findIndex(n => n.id === id);
     if (index > -1) {
-       // Simple removal for now, could be enhanced with GSAP exit animation
-       notes.value.splice(index, 1);
+      // Simple removal for now, could be enhanced with GSAP exit animation
+      gsap.fromTo(`.card:nth-child(${index + 1})`, {opacity: 1, scale: 1,}, {opacity: 0, scale: 0.5, duration: 0.5, ease: "back.out(1.7)"})
+      setTimeout(()=> notes.value.splice(index, 1), 600)
     }
   } else {
     notes.value = notes.value.filter(n => n.id !== id);
