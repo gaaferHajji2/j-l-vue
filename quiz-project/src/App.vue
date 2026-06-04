@@ -27,7 +27,7 @@
 <style scoped>
 .container {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto auto;
 }
 
 header {
@@ -53,6 +53,7 @@ header input {
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
+  margin-left: 10%;
 }
 
 /* Card */
