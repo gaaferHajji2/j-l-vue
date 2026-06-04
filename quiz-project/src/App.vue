@@ -53,7 +53,6 @@ header input {
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
-  margin-left: 10%;
 }
 
 /* Card */
