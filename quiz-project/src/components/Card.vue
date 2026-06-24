@@ -36,7 +36,6 @@ let { quiz } = defineProps(['quiz']);
 
 .card .card-text {
     padding: 0 5px;
-
 }
 
 .card .card-text h2 {
