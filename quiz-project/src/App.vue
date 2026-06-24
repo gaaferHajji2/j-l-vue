@@ -54,7 +54,4 @@ header input {
   flex-wrap: wrap;
   margin-top: 40px;
 }
-
-/* Card */
-
 </style>
