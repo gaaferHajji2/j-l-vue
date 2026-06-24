@@ -1,5 +1,4 @@
 <script setup>
-
   import q from './data/quizes.json';
   import { ref, watch } from 'vue';
   import Card from './components/Card.vue'
